@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:batch="http://www.springframework.org/schema/batch" xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/batch
+  http://www.springframework.org/schema/batch/spring-batch-2.2.xsd
+  http://www.springframework.org/schema/beans 
+  http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<!-- database configuration -->
+	
+	<import resource="../dbConfig/database-pld.xml" />
+
+	<bean id="sucursalModel" class="com.web.sucursal.model.SucursalModel" scope="prototype" />
+	<bean id="validator" 
+           class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
+           
+	<bean id="afterStepListener" class="com.web.listener.EmptyFileHandler" />
+	
+	<!-- Batch job 
+	<batch:job id="SucursalesJob">
+		<batch:step id="step1">
+			<batch:tasklet>
+				<batch:chunk reader="csvSucursalesReader" processor="sucursalProcessor"
+					writer="sucursalWritter" commit-interval="1">
+				</batch:chunk>
+				<batch:listeners>    
+                         <batch:listener ref="afterStepListener" />    
+                     </batch:listeners> 
+			</batch:tasklet>
+		</batch:step>
+	</batch:job>
+
+	-->
+	<bean id="sucursalProcessor" class="com.web.sucursal.processor.SucursalProcess">
+		<property name="validator" ref="validator" />  
+	</bean>
+	
+	<bean id="csvSucursalesReader" class="org.springframework.batch.item.file.FlatFileItemReader"
+		scope="step">
+
+		<property name="linesToSkip" value="1" />
+		<!-- Read order csv file -->
+		<property name="resource" value="#{jobParameters['inputDataFile']}" />
+		<property name="lineMapper">
+			
+			<bean class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
+				<!-- split fileds -->
+				<property name="lineTokenizer">
+				
+					<bean
+						class="org.springframework.batch.item.file.transform.DelimitedLineTokenizer">
+						<!-- property name="names"
+							value="idSucursal,sucursal,pais,estado,municipio,colonia,codigoPostal,calle,numExt,numInt,Estatus,localidad" />
+						 property name="names"
+							value="col1,col2,col3,col4,col5,col6,col7,col8,col9,col10,col11,col12" /-->
+					</bean>
+				</property>
+				<property name="fieldSetMapper">  
+                          <bean class="com.web.sucursal.model.SucursalMapper" />  
+                </property>  
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="sucursalWritter"
+		class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+		<property name="dataSource" ref="dataSourcePLD" />
+		<property name="sql" value="insert into SOFOM.MTS_DSUCURSAL(SUCURSALID, DS_SUCURSAL, PAISID, ESTADOID) 
+			values (:idSucursal, :sucursal, :estado, :municipio)"/>
+		<!-- mapping java object property to sql parameter -->
+		<property name="itemSqlParameterSourceProvider">
+			<bean
+				class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
+		</property>
+	</bean>
+
+</beans>

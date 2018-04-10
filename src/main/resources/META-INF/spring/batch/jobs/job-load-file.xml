@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:batch="http://www.springframework.org/schema/batch" xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/batch
+  http://www.springframework.org/schema/batch/spring-batch-2.2.xsd
+  http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+  http://www.springframework.org/schema/task
+  http://www.springframework.org/schema/task/spring-task-3.2.xsd
+  ">
+
+<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="locations">
+			<list>
+			</list>
+		</property>
+	</bean>
+
+	<bean class="org.springframework.batch.test.JobLauncherTestUtils"/>
+
+	<!-- stored job-meta in memory -->
+	<bean id="jobRepository"
+		class="org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean">
+		<property name="transactionManager" ref="transactionManager" />
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.batch.support.transaction.ResourcelessTransactionManager" />
+
+	<bean id="jobLauncher"
+		class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
+		<property name="jobRepository" ref="jobRepository" />
+	</bean>
+
+	<!-- database configuration -->
+	<import resource="../dbConfig/database.xml" />
+	<import resource="../dbConfig/database-pld.xml" />
+	<import resource="../../beans/LoadValidationBean.xml" />
+
+	<bean id="fileTmpModel" class="com.web.common.CommonModel" scope="step" />
+
+	<batch:job id="loadFile">
+		<batch:step id="loadFileToTmpTables">
+			<batch:tasklet >
+				<batch:chunk
+						reader="fileCsvGenericReader"
+						writer="loadFileWriter"
+						processor="rowProcessor"
+						commit-interval="1000"
+						>
+				</batch:chunk>
+			</batch:tasklet>
+			<batch:next on="COMPLETED" to="tmpToFinalTables"/>
+			<batch:next on="FAILED" to="finalTaskError"/>
+		</batch:step>
+		<batch:step id="tmpToFinalTables">
+			<batch:tasklet ref="lodFinalTablesTask"/>
+		</batch:step>
+		<batch:step id="finalTaskError">
+			<batch:tasklet ref="loadFailTask"/>
+		</batch:step>
+	</batch:job>
+
+	<!-- bean id="loadScheduller" class="com.web.tmp.tasklet.LoadScheduller"/>
+
+	<task:scheduled-tasks>
+		<task:scheduled ref="loadScheduller" method="run" cron="0/20 * * * * *" />
+	</task:scheduled-tasks-->
+
+	<bean id="loadFailTask" class="com.web.tmp.tasklet.LoadFail"/>
+
+	<bean id="persistenceFinalTask" class="com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation">
+			<property name="dataSource" ref="dataSourcePLD"></property>
+			<property name="sumaMontoOperationsLoaded">
+				<value>
+					<![CDATA[
+						select SUM(MONTOCNTR) FROM [schema].MTS_HOPERACIONESCNTR WHERE ID_PROCESO = ?
+					]]>
+				</value>
+			</property>
+			<property name="qryErrors">
+			<value>
+				<![CDATA[
+					SELECT COUNT(*) FROM [schema].MTS_CARGAS_TEMPORALES WHERE CVE_STATUS = 'R' AND ID_PROCESO = ?
+				]]>
+			</value>
+		</property>
+	</bean>
+
+	<bean id="lodFinalTablesTask" class="com.web.tmp.tasklet.LoadFinalTask" scope="step">
+		<property name="propertiesValidate" ref="loadCommonPropertiesValidate"/>
+		<property name="persistenceFinalTask" ref="persistenceFinalTask"></property>
+		<property name="dataSource" ref="dataSourcePLD"></property>
+		<property name="idProceso" value="#{jobParameters['idProceso']}"></property>
+		<property name="idLayout" value="#{jobParameters['idLayout']}"></property>
+		<property name="schema" value="#{jobParameters['schema']}"></property>
+		<property name="pathLoadFile" value="#{jobParameters['inputDataFile']}"></property>
+		<property name="fileName" value="#{jobParameters['fileName']}"></property>
+		<property name="userSession" value="#{jobParameters['userSession']}"></property>
+		<property name="cveTipoArchivo" value="#{jobParameters['cveTipoArchivo']}"></property>
+		<property name="insArchProcesados">
+			<value>
+				<![CDATA[
+				INSERT INTO [[schema]].MTS_EXT_ARCHIVOS_PROCESADOS
+(ID_PROCESO,
+NOMBRE_ARCHIVO,
+REGLEIDOS,
+REGRECHAZADOS,
+REGVALIDOS,
+REGINSERTADOS,
+REGACTUALIZADOS,
+CVE_TIPO_ARCHIVO,
+SW_VALIDA_CC,
+CREADO_POR,
+FEC_CREACION,
+MONTOREGVALIDOS)
+VALUES
+(?,?,
+(SELECT COUNT(*) FROM [[schema]].MTS_CARGAS_TEMPORALES WHERE VALOR_01 <> '@' AND ID_PROCESO = ?),
+(SELECT COUNT(*) FROM [[schema]].MTS_CARGAS_TEMPORALES WHERE CVE_STATUS = 'R' AND VALOR_01 <> '@' AND ID_PROCESO = ?),
+(SELECT COUNT(*) FROM [[schema]].MTS_CARGAS_TEMPORALES WHERE CVE_STATUS = 'V' AND VALOR_01 <> '@' AND ID_PROCESO = ?),
+?,?,?,
+'S', ?, GETDATE(),
+?);
+				]]>
+			</value>
+		</property>
+		<property name="insDetalleError">
+			<value>
+				<![CDATA[
+				INSERT INTO [[schema]].MTS_LAYOUT_DETALLE_VALIDACIONES(ID_PROCESO, ID_REGISTRO, DSERROR)
+(SELECT ID_PROCESO, ID_REGISTRO, DS_ERROR FROM [[schema]].MTS_CARGAS_TEMPORALES WHERE CVE_STATUS = 'R' AND ID_PROCESO = ? AND VALOR_01 <> '@')
+				]]>
+			</value>
+		</property>
+		<property name="qryErrors">
+			<value>
+				<![CDATA[
+				SELECT COUNT(*) FROM [schema].MTS_CARGAS_TEMPORALES WHERE CVE_STATUS = 'R' AND ID_PROCESO = ?
+				]]>
+			</value>
+		</property>
+		<property name="qryCifrasControlValida">
+			<value>
+				<![CDATA[
+				SELECT VALOR_ATRIBUTO_10 AS VALIDA_CIFRA_CONTROL
+				FROM   [schema].MTS_ANA_DCATALOGOS_CLAVES
+				where  CVE_TABLA = 'CAT_CARGAS'
+				AND VALOR_ATRIBUTO_02 = ?
+				]]>
+			</value>
+		</property>
+		<property name="updateStatusBitacora">
+			<value>
+				<![CDATA[
+UPDATE [[schema]].MTS_ANA_BITACORA_PROCESOS
+					SET
+						FECHA_FIN_PROCESO = GETDATE(),
+						CVE_ESTATUS_PROCESO = ?,
+						ACTUALIZADO_POR = ?,
+						FEC_ACTUALIZACION = GETDATE(),
+						MSG_PROCESO = ?
+					WHERE ID_PROCESO = ?
+				]]>
+			</value>
+		</property>
+	</bean>
+
+	<bean id="validateLoad" class="com.web.annotation.ValidateMasiveLoad">
+		<property name="dataSource" ref="dataSourcePLD"/>
+		<property name="propertiesValidate" ref="loadCommonPropertiesValidate"/>
+	</bean>
+
+	<!-- BEGIN ITEMS PROCESSOR -->
+
+	<bean id="rowProcessor"
+      class="org.springframework.batch.item.support.CompositeItemProcessor">
+    <property name="delegates">
+        <list>
+        	<bean class="com.web.tmp.procesor.FileProcesor" scope="step">
+						<property name="validateLoad" ref="validateLoad"></property>
+						<property name="idLayout" value="#{jobParameters['idLayout']}"></property>
+						<property name="schema" value="#{jobParameters['schema']}"></property>
+					</bean>
+        </list>
+    </property>
+</bean>
+
+
+
+
+<!-- END ITEMS PROCESSOR -->
+
+	<bean id="fileCsvGenericReader" class="org.springframework.batch.item.file.FlatFileItemReader"
+		scope="step">
+		<!-- NO LEE LA CABECERA DEL ARCHIVO -->
+		<property name="linesToSkip" value="1" />
+		<!-- RECIBE COMO PARAMETRO LA RUTA ABSOLUTA DEL ARCHIVO -->
+		<property name="resource" value="#{jobParameters['inputDataFile']}" />
+		<property name="encoding" value="UTF-8"/>
+		<property name="lineMapper">
+			<bean class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
+				<property name="lineTokenizer">
+					<bean class="org.springframework.batch.item.file.transform.DelimitedLineTokenizer">
+						<property name="delimiter" value="#{jobParameters['separador']}"/>
+					</bean>
+				</property>
+				<!-- SE MAPEA EL ARCHIVO A UN OBJETO COMUN -->
+				<property name="fieldSetMapper">
+					<bean class="com.web.tmp.load.TemporalMapper" >
+						<property name="idProceso" value="#{jobParameters['idProceso']}"></property>
+					</bean>
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="loadFileWriter"
+		class="org.springframework.batch.item.database.JdbcBatchItemWriter" scope="step">
+		<property name="dataSource" ref="dataSourcePLD" />
+		<property name="sql" value="insert into #{jobParameters['schema']}.MTS_CARGAS_TEMPORALES(
+			ID_REGISTRO,
+			ID_PROCESO,
+			VALOR_01,
+			VALOR_02,
+			VALOR_03,
+			VALOR_04,
+			VALOR_05,
+			VALOR_06,
+			VALOR_07,
+			VALOR_08,
+			VALOR_09,
+			VALOR_10,
+			VALOR_11,
+			VALOR_12,
+			VALOR_13,
+			VALOR_14,
+			VALOR_15,
+			VALOR_16,
+			VALOR_17,
+			VALOR_18,
+			VALOR_19,
+			VALOR_20,
+			VALOR_21,
+			VALOR_22,
+			VALOR_23,
+			VALOR_24,
+			VALOR_25,
+			VALOR_26,
+			VALOR_27,
+			VALOR_28,
+			VALOR_29,
+			VALOR_30,
+			VALOR_31,
+			VALOR_32,
+			VALOR_33,
+			VALOR_34,
+			VALOR_35,
+			VALOR_36,
+			VALOR_37,
+			VALOR_38,
+			VALOR_39,
+			VALOR_40,
+			VALOR_41,
+			VALOR_42,
+			VALOR_43,
+			VALOR_44,
+			VALOR_45,
+			VALOR_46,
+			VALOR_47,
+			VALOR_48,
+			VALOR_49,
+			VALOR_50,
+			CVE_STATUS,
+			DS_ERROR
+			)
+			values (
+			:rowNumber,
+			:idProceso,
+			:col1,
+			:col2,
+			:col3,
+			:col4,
+			:col5,
+			:col6,
+			:col7,
+			:col8,
+			:col9,
+			:col10,
+			:col11,
+			:col12,
+			:col13,
+			:col14,
+			:col15,
+			:col16,
+			:col17,
+			:col18,
+			:col19,
+			:col20,
+			:col21,
+			:col22,
+			:col23,
+			:col24,
+			:col25,
+			:col26,
+			:col27,
+			:col28,
+			:col29,
+			:col30,
+			:col31,
+			:col32,
+			:col33,
+			:col34,
+			:col35,
+			:col36,
+			:col37,
+			:col38,
+			:col39,
+			:col40,
+			:col41,
+			:col42,
+			:col43,
+			:col44,
+			:col45,
+			:col46,
+			:col47,
+			:col48,
+			:col49,
+			:col50,
+			:status,
+			:descError
+			)"/>
+		<!-- mapping java object property to sql parameter -->
+		<property name="itemSqlParameterSourceProvider">
+			<bean
+				class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
+		</property>
+	</bean>
+
+</beans>

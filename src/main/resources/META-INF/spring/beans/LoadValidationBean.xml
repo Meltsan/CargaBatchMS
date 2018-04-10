@@ -1,0 +1,78 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/jdbc 
+		http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd">
+	
+	<bean id="loadPropertiesImpl" class="com.web.common.LoadPropertiesImpl">
+			<property name="dataSource" ref="dataSourcePLD"></property>
+	</bean>
+	
+	<bean name="loadCommonPropertiesValidate" class="com.web.common.LoadCommonPropertiesValidate">
+		<property name="loadProperties" ref="loadPropertiesImpl"/>
+		<property name="dataSource" ref="dataSourcePLD"></property>
+
+		<property name="qryNoNullFields">
+			<value>
+					<![CDATA[
+						SELECT ID_ORDEN FROM [schema].MTS_DMAPEO_VALIDACIONES WHERE ID_LAYOUT = ? AND SWOBLIGATORIO = 'S' AND CONSTANTE IS NULL
+					]]>
+			</value>
+		</property>
+		<property name="qryCatalogFields">
+			<value>
+					<![CDATA[
+						SELECT ID_ORDEN, NOMBRE_COLUMNA, STRINGQUERY FROM [schema].MTS_DMAPEO_VALIDACIONES WHERE ID_LAYOUT = ? AND SWCATALOGO = 'S' AND STRINGQUERY <> ''
+					]]>
+			</value>
+		</property>
+		<property name="qryValidateAttributes">
+			<value>
+					<![CDATA[
+						SELECT  ID_SECUENCIA_MAPEO, LONGITUD, CVE_TIPO_DATO, SWTIPODATO, NOMBRE_COLUMNA FROM [schema].MTS_DMAPEO_VALIDACIONES WHERE ID_LAYOUT = ? ORDER BY ID_SECUENCIA_MAPEO
+					]]>
+			</value>
+		</property>
+		<property name="qryInsertTemplate">
+			<value>
+					<![CDATA[
+						SELECT NOMBRE_COLUMNA, ID_SECUENCIA_MAPEO, CVE_TIPO_DATO, MASCARA FROM [schema].MTS_DMAPEO_VALIDACIONES WHERE ID_LAYOUT = ?
+					]]>
+			</value>
+		</property>
+		<property name="qryUpdateTemplate">
+			<value>
+					<![CDATA[
+						SELECT NOMBRE_COLUMNA, ID_SECUENCIA_MAPEO, CVE_TIPO_DATO, SWKEY, MASCARA FROM [schema].MTS_DMAPEO_VALIDACIONES WHERE ID_LAYOUT = ? AND SWUPDATE = 'S' ORDER BY ID_SECUENCIA_MAPEO
+					]]>
+			</value>
+		</property>
+		<property name="qrySwKey">
+			<value>
+					<![CDATA[
+						SELECT NOMBRE_COLUMNA, ID_SECUENCIA_MAPEO, CVE_TIPO_DATO, SWKEY, MASCARA FROM [schema].MTS_DMAPEO_VALIDACIONES WHERE ID_LAYOUT = ? AND SWKEY = 'S' ORDER BY ID_SECUENCIA_MAPEO
+					]]>
+			</value>
+		</property>
+		<property name="qryTable">
+			<value>
+					<![CDATA[
+						SELECT DISTINCT TABLAPLAD FROM [schema].MTS_DMAPEO_VALIDACIONES WHERE ID_LAYOUT = ?
+					]]>
+			</value>
+		</property>
+		<property name="qryConstantesDefault">
+			<value>
+					<![CDATA[
+						SELECT A.ID_SECUENCIA_MAPEO, A.CONSTANTE, A.VALOR_DEFAULT, B.VALOR_ATRIBUTO_01 AS DEF_TIPO
+						FROM [schema].MTS_DMAPEO_VALIDACIONES A, [schema].MTS_ANA_DCATALOGOS_CLAVES  B
+						WHERE A.ID_LAYOUT = ?
+						AND A.CVE_TIPO_DATO = B.CLAVE_01
+						AND B.CVE_TABLA = 'CAT_TIPODATO_DEFAULT'
+						ORDER BY A.ID_ORDEN
+					]]>
+			</value>
+		</property>
+	</bean>
+</beans>		

@@ -1,0 +1,491 @@
+2017-11-23 14:41:10,092 -0600 | INFO | org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@63e31ee: startup date [Thu Nov 23 14:41:10 CST 2017]; root of context hierarchy
+2017-11-23 14:41:10,154 -0600 | INFO | org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/spring/batch/jobs/job-load-file.xml]
+2017-11-23 14:41:10,306 -0600 | INFO | org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/spring/batch/dbConfig/database.xml]
+2017-11-23 14:41:10,325 -0600 | INFO | org.springframework.beans.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'transactionManager': replacing [Generic bean: class [org.springframework.batch.support.transaction.ResourcelessTransactionManager]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [META-INF/spring/batch/jobs/job-load-file.xml]] with [Generic bean: class [org.springframework.batch.support.transaction.ResourcelessTransactionManager]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [META-INF/spring/batch/dbConfig/database.xml]]
+2017-11-23 14:41:10,326 -0600 | INFO | org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/spring/batch/dbConfig/database-pld.xml]
+2017-11-23 14:41:10,344 -0600 | INFO | org.springframework.beans.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'transactionManager': replacing [Generic bean: class [org.springframework.batch.support.transaction.ResourcelessTransactionManager]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [META-INF/spring/batch/dbConfig/database.xml]] with [Generic bean: class [org.springframework.batch.support.transaction.ResourcelessTransactionManager]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [META-INF/spring/batch/dbConfig/database-pld.xml]]
+2017-11-23 14:41:10,345 -0600 | INFO | org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/spring/beans/LoadValidationBean.xml]
+2017-11-23 14:41:10,400 -0600 | INFO | org.springframework.beans.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'loadFile': replacing [Generic bean: class [org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Generic bean: class [org.springframework.batch.core.configuration.xml.JobParserJobFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2017-11-23 14:41:10,545 -0600 | INFO | org.springframework.beans.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'fileTmpModel': replacing [Generic bean: class [com.web.common.CommonModel]; scope=step; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=false; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [META-INF/spring/batch/jobs/job-load-file.xml]] with [Root bean: class [org.springframework.aop.scope.ScopedProxyFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in BeanDefinition defined in class path resource [META-INF/spring/batch/jobs/job-load-file.xml]]
+2017-11-23 14:41:10,547 -0600 | INFO | org.springframework.beans.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'lodFinalTablesTask': replacing [Generic bean: class [com.web.tmp.tasklet.LoadFinalTask]; scope=step; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=false; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [META-INF/spring/batch/jobs/job-load-file.xml]] with [Root bean: class [org.springframework.aop.scope.ScopedProxyFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in BeanDefinition defined in class path resource [META-INF/spring/batch/jobs/job-load-file.xml]]
+2017-11-23 14:41:10,548 -0600 | INFO | org.springframework.beans.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'fileCsvGenericReader': replacing [Generic bean: class [org.springframework.batch.item.file.FlatFileItemReader]; scope=step; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=false; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [META-INF/spring/batch/jobs/job-load-file.xml]] with [Root bean: class [org.springframework.aop.scope.ScopedProxyFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in BeanDefinition defined in class path resource [META-INF/spring/batch/jobs/job-load-file.xml]]
+2017-11-23 14:41:10,549 -0600 | INFO | org.springframework.beans.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'loadFileWriter': replacing [Generic bean: class [org.springframework.batch.item.database.JdbcBatchItemWriter]; scope=step; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=false; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [META-INF/spring/batch/jobs/job-load-file.xml]] with [Root bean: class [org.springframework.aop.scope.ScopedProxyFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in BeanDefinition defined in class path resource [META-INF/spring/batch/jobs/job-load-file.xml]]
+2017-11-23 14:41:10,575 -0600 | INFO | org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@17d677df: defining beans [propertyConfigurer,org.springframework.batch.test.JobLauncherTestUtils#0,jobRepository,transactionManager,jobLauncher,dataSourceTmp,dataSourcePLD,loadPropertiesImpl,loadCommonPropertiesValidate,fileTmpModel,org.springframework.batch.core.scope.internalStepScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,loadFileToTmpTables,tmpToFinalTables,finalTaskError,loadFile,loadFailTask,persistenceFinalTask,lodFinalTablesTask,validateLoad,rowProcessor,fileCsvGenericReader,loadFileWriter,scopedTarget.fileTmpModel,scopedTarget.lodFinalTablesTask,scopedTarget.com.web.tmp.procesor.FileProcesor#26aa12dd,com.web.tmp.procesor.FileProcesor#26aa12dd,scopedTarget.fileCsvGenericReader,scopedTarget.loadFileWriter]; root of factory hierarchy
+2017-11-23 14:41:11,070 -0600 | DEBUG | com.web.tmp.load.TemporalMapper - PROCESO: 6710
+2017-11-23 14:41:11,071 -0600 | DEBUG | com.web.tmp.load.TemporalMapper - PROCESO: 6710
+2017-11-23 14:41:11,072 -0600 | DEBUG | com.web.tmp.load.TemporalMapper - PROCESO: 6710
+2017-11-23 14:41:11,073 -0600 | DEBUG | com.web.tmp.load.TemporalMapper - PROCESO: 6710
+2017-11-23 14:41:11,074 -0600 | DEBUG | com.web.tmp.load.TemporalMapper - PROCESO: 6710
+2017-11-23 14:41:11,075 -0600 | DEBUG | com.web.tmp.load.TemporalMapper - PROCESO: 6710
+2017-11-23 14:41:11,077 -0600 | DEBUG | com.web.tmp.procesor.FileProcesor - REGISTRO [0]
+2017-11-23 14:41:11,077 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - query : 
+					
+						SELECT ID_ORDEN FROM [schema].MTS_DMAPEO_VALIDACIONES WHERE ID_LAYOUT = ? AND SWOBLIGATORIO = 'S' AND CONSTANTE IS NULL
+					
+			
+2017-11-23 14:41:11,077 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - schema : BANCA5
+2017-11-23 14:41:11,078 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - query : 
+					
+						SELECT ID_ORDEN FROM [schema].MTS_DMAPEO_VALIDACIONES WHERE ID_LAYOUT = ? AND SWOBLIGATORIO = 'S' AND CONSTANTE IS NULL
+					
+			
+2017-11-23 14:41:11,078 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - schema : BANCA5
+2017-11-23 14:41:21,142 -0600 | INFO | com.web.common.LoadCommonPropertiesValidate -  initNotNullList -======= > 9
+2017-11-23 14:41:21,142 -0600 | INFO | com.web.common.LoadCommonPropertiesValidate -  initNotNullList -======= > 9
+2017-11-23 14:41:23,185 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - QUERY CATALOG FIELDS....
+2017-11-23 14:41:23,507 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - :::: CREATE VALIDATE ATTRIBUTES ::::::
+2017-11-23 14:41:23,511 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - 
+CVE[A] SECUENCIA [1] LONG[100] NOMBRE[CODOPER] TIPO DATO[N]
+CVE[A] SECUENCIA [2] LONG[50] NOMBRE[NUMPOLIZACNTR] TIPO DATO[N]
+CVE[A] SECUENCIA [3] LONG[8] NOMBRE[SUCURSALID] TIPO DATO[N]
+CVE[A] SECUENCIA [4] LONG[18] NOMBRE[CONTRATANTECD] TIPO DATO[N]
+CVE[A] SECUENCIA [5] LONG[38] NOMBRE[AGENTEID] TIPO DATO[S]
+CVE[E] SECUENCIA [6] LONG[38] NOMBRE[PRODUCTOID] TIPO DATO[N]
+CVE[A] SECUENCIA [7] LONG[2] NOMBRE[INSTRMONETARIOID] TIPO DATO[S]
+CVE[A] SECUENCIA [8] LONG[8] NOMBRE[TIPOOPERACIONID] TIPO DATO[S]
+CVE[F] SECUENCIA [9] LONG[10] NOMBRE[FECHAOPERACIONCNTR] TIPO DATO[N]
+CVE[A] SECUENCIA [10] LONG[8] NOMBRE[HORA_OPERACION] TIPO DATO[N]
+CVE[M] SECUENCIA [11] LONG[14] NOMBRE[MONTOCNTR] TIPO DATO[N]
+CVE[M] SECUENCIA [12] LONG[19] NOMBRE[MONTOMNCNTR] TIPO DATO[N]
+CVE[M] SECUENCIA [13] LONG[14] NOMBRE[MONTO_EFECTIVO] TIPO DATO[N]
+CVE[A] SECUENCIA [14] LONG[10] NOMBRE[MONEDAID] TIPO DATO[N]
+CVE[D] SECUENCIA [15] LONG[14] NOMBRE[TIPOCAMBIOCNTR] TIPO DATO[N]
+CVE[D] SECUENCIA [16] LONG[14] NOMBRE[TASA_PACTADA] TIPO DATO[N]
+CVE[A] SECUENCIA [17] LONG[50] NOMBRE[CVE_BANCO_ORIGEN] TIPO DATO[N]
+CVE[A] SECUENCIA [18] LONG[50] NOMBRE[CVE_BANCO_DESTINO] TIPO DATO[N]
+CVE[A] SECUENCIA [19] LONG[250] NOMBRE[DS_BANCO_ORIGEN] TIPO DATO[N]
+CVE[A] SECUENCIA [20] LONG[250] NOMBRE[DS_BANCO_DESTINO] TIPO DATO[N]
+CVE[A] SECUENCIA [21] LONG[250] NOMBRE[DS_NOMBRE_DEPOSITANTE] TIPO DATO[N]
+CVE[A] SECUENCIA [22] LONG[250] NOMBRE[DS_NOMBRE_BENEFICIARIO] TIPO DATO[N]
+CVE[A] SECUENCIA [23] LONG[50] NOMBRE[CUENTA_BENEFICIARIO] TIPO DATO[N]
+CVE[A] SECUENCIA [24] LONG[50] NOMBRE[CUENTA_ORDENANTE] TIPO DATO[N]
+CVE[A] SECUENCIA [25] LONG[50] NOMBRE[CVE_TIPO_GARANTIA] TIPO DATO[N]
+CVE[A] SECUENCIA [26] LONG[50] NOMBRE[CVE_TRANS_ORDENANTE] TIPO DATO[N]
+CVE[D] SECUENCIA [27] LONG[14] NOMBRE[IMP_VALOR_GARANTIA] TIPO DATO[N]
+CVE[E] SECUENCIA [28] LONG[250] NOMBRE[NUMERO_GARANTIA] TIPO DATO[N]
+CVE[F] SECUENCIA [29] LONG[10] NOMBRE[FEC_APERTURA_CUENTA] TIPO DATO[N]
+CVE[F] SECUENCIA [30] LONG[10] NOMBRE[FEC_CANCELACION_CREDITO] TIPO DATO[N]
+CVE[E] SECUENCIA [31] LONG[14] NOMBRE[IMP_PAGO_MINIMO_LC] TIPO DATO[N]
+CVE[D] SECUENCIA [32] LONG[14] NOMBRE[IMP_SALDO_LC] TIPO DATO[N]
+CVE[E] SECUENCIA [33] LONG[5] NOMBRE[PLAZO_CREDITO_MESES] TIPO DATO[N]
+CVE[A] SECUENCIA [34] LONG[5] NOMBRE[PAISID_BANCO_ORIGEN] TIPO DATO[N]
+CVE[A] SECUENCIA [35] LONG[5] NOMBRE[PAISID_BANCO_DESTINO] TIPO DATO[N]
+CVE[A] SECUENCIA [36] LONG[50] NOMBRE[CVE_ENTIDAD_MERCANTIL] TIPO DATO[N]
+CVE[A] SECUENCIA [37] LONG[50] NOMBRE[CVE_TRANS_BENEFICIARIO] TIPO DATO[N]
+CVE[A] SECUENCIA [38] LONG[30] NOMBRE[CVE_ALTERNA_ORDENANTE] TIPO DATO[N]
+CVE[A] SECUENCIA [39] LONG[250] NOMBRE[DS_CONCEPTO_PAGO] TIPO DATO[N]
+CVE[A] SECUENCIA [40] LONG[180] NOMBRE[DS_BANCO_CORRESPONSAL_1] TIPO DATO[N]
+CVE[A] SECUENCIA [41] LONG[180] NOMBRE[DS_BANCO_CORRESPONSAL_2] TIPO DATO[N]
+CVE[A] SECUENCIA [42] LONG[180] NOMBRE[DS_BANCO_CORRESPONSAL_3] TIPO DATO[N]
+CVE[A] SECUENCIA [43] LONG[180] NOMBRE[DS_BANCO_CORRESPONSAL_4] TIPO DATO[N]
+CVE[A] SECUENCIA [44] LONG[180] NOMBRE[DS_BANCO_CORRESPONSAL_5] TIPO DATO[N]
+CVE[A] SECUENCIA [45] LONG[180] NOMBRE[DS_BANCO_CORRESPONSAL_6] TIPO DATO[N]
+CVE[A] SECUENCIA [46] LONG[180] NOMBRE[DS_BANCO_CORRESPONSAL_7] TIPO DATO[N]
+CVE[A] SECUENCIA [47] LONG[180] NOMBRE[DS_BANCO_CORRESPONSAL_8] TIPO DATO[N]
+CVE[A] SECUENCIA [48] LONG[180] NOMBRE[DS_BANCO_CORRESPONSAL_9] TIPO DATO[N]
+CVE[A] SECUENCIA [49] LONG[180] NOMBRE[DS_BANCO_CORRESPONSAL_10] TIPO DATO[N]
+2017-11-23 14:41:26,153 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - --------------- INSERT SELECT ---------------
+2017-11-23 14:41:26,153 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - INSERT INTO BANCA5.MTS_HOPERACIONESCNTR(CODOPER,NUMPOLIZACNTR,SUCURSALID,CONTRATANTECD,AGENTEID,PRODUCTOID,INSTRMONETARIOID,TIPOOPERACIONID,FECHAOPERACIONCNTR,HORA_OPERACION,MONTOCNTR,MONTOMNCNTR,MONTO_EFECTIVO,MONEDAID,TIPOCAMBIOCNTR,TASA_PACTADA,CVE_BANCO_ORIGEN,CVE_BANCO_DESTINO,DS_BANCO_ORIGEN,DS_BANCO_DESTINO,DS_NOMBRE_DEPOSITANTE,DS_NOMBRE_BENEFICIARIO,CUENTA_BENEFICIARIO,CUENTA_ORDENANTE,CVE_TIPO_GARANTIA,CVE_TRANS_ORDENANTE,IMP_VALOR_GARANTIA,NUMERO_GARANTIA,FEC_APERTURA_CUENTA,FEC_CANCELACION_CREDITO,IMP_PAGO_MINIMO_LC,IMP_SALDO_LC,PLAZO_CREDITO_MESES,PAISID_BANCO_ORIGEN,PAISID_BANCO_DESTINO,CVE_ENTIDAD_MERCANTIL,CVE_TRANS_BENEFICIARIO,CVE_ALTERNA_ORDENANTE,DS_CONCEPTO_PAGO,DS_BANCO_CORRESPONSAL_1,DS_BANCO_CORRESPONSAL_2,DS_BANCO_CORRESPONSAL_3,DS_BANCO_CORRESPONSAL_4,DS_BANCO_CORRESPONSAL_5,DS_BANCO_CORRESPONSAL_6,DS_BANCO_CORRESPONSAL_7,DS_BANCO_CORRESPONSAL_8,DS_BANCO_CORRESPONSAL_9,DS_BANCO_CORRESPONSAL_10,ID_PROCESO)SELECT VALOR_01,VALOR_02,VALOR_03,VALOR_04,VALOR_05,VALOR_06,VALOR_07,VALOR_08,(SELECT convert(datetime,VALOR_09,103)),VALOR_10,(SELECT REPLACE(VALOR_11,',','')),(SELECT REPLACE(VALOR_12,',','')),(SELECT REPLACE(VALOR_13,',','')),VALOR_14,VALOR_15,VALOR_16,VALOR_17,VALOR_18,VALOR_19,VALOR_20,VALOR_21,VALOR_22,VALOR_23,VALOR_24,VALOR_25,VALOR_26,VALOR_27,VALOR_28,(SELECT convert(datetime,VALOR_29,103)),(SELECT convert(datetime,VALOR_30,103)),VALOR_31,VALOR_32,VALOR_33,VALOR_34,VALOR_35,VALOR_36,VALOR_37,VALOR_38,VALOR_39,VALOR_40,VALOR_41,VALOR_42,VALOR_43,VALOR_44,VALOR_45,VALOR_46,VALOR_47,VALOR_48,VALOR_49,ID_PROCESO FROM BANCA5.MTS_CARGAS_TEMPORALES WHERE CVE_STATUS = 'V' AND     ID_PROCESO  = ? AND     NOT EXISTS (SELECT  NULL FROM BANCA5.MTS_HOPERACIONESCNTR CONT2 WHERE  CONT2.CODOPER = VALOR_01 AND  CONT2.CONTRATANTECD = VALOR_04)
+2017-11-23 14:41:26,154 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ---------------------------------------------
+2017-11-23 14:41:31,598 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ===== CREATE QUERY UPDATE
+2017-11-23 14:41:31,602 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - 
+LABEL [NUMPOLIZACNTR] VALUE [2]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [SUCURSALID] VALUE [3]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [AGENTEID] VALUE [5]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [PRODUCTOID] VALUE [6]DATATYPE [E] SWKEY [null] MASCARA [null]
+LABEL [INSTRMONETARIOID] VALUE [7]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [TIPOOPERACIONID] VALUE [8]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [FECHAOPERACIONCNTR] VALUE [9]DATATYPE [F] SWKEY [null] MASCARA [103]
+LABEL [HORA_OPERACION] VALUE [10]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [MONTOCNTR] VALUE [11]DATATYPE [M] SWKEY [null] MASCARA [null]
+LABEL [MONTOMNCNTR] VALUE [12]DATATYPE [M] SWKEY [null] MASCARA [null]
+LABEL [MONTO_EFECTIVO] VALUE [13]DATATYPE [M] SWKEY [null] MASCARA [null]
+LABEL [MONEDAID] VALUE [14]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [TIPOCAMBIOCNTR] VALUE [15]DATATYPE [D] SWKEY [null] MASCARA [null]
+LABEL [TASA_PACTADA] VALUE [16]DATATYPE [D] SWKEY [null] MASCARA [null]
+LABEL [CVE_BANCO_ORIGEN] VALUE [17]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [CVE_BANCO_DESTINO] VALUE [18]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [DS_BANCO_ORIGEN] VALUE [19]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [DS_BANCO_DESTINO] VALUE [20]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [DS_NOMBRE_DEPOSITANTE] VALUE [21]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [DS_NOMBRE_BENEFICIARIO] VALUE [22]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [CUENTA_BENEFICIARIO] VALUE [23]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [CUENTA_ORDENANTE] VALUE [24]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [CVE_TIPO_GARANTIA] VALUE [25]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [CVE_TRANS_ORDENANTE] VALUE [26]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [IMP_VALOR_GARANTIA] VALUE [27]DATATYPE [D] SWKEY [null] MASCARA [null]
+LABEL [NUMERO_GARANTIA] VALUE [28]DATATYPE [E] SWKEY [null] MASCARA [null]
+LABEL [FEC_APERTURA_CUENTA] VALUE [29]DATATYPE [F] SWKEY [null] MASCARA [103]
+LABEL [FEC_CANCELACION_CREDITO] VALUE [30]DATATYPE [F] SWKEY [null] MASCARA [103]
+LABEL [IMP_PAGO_MINIMO_LC] VALUE [31]DATATYPE [E] SWKEY [null] MASCARA [null]
+LABEL [IMP_SALDO_LC] VALUE [32]DATATYPE [D] SWKEY [null] MASCARA [null]
+LABEL [PLAZO_CREDITO_MESES] VALUE [33]DATATYPE [E] SWKEY [null] MASCARA [null]
+LABEL [PAISID_BANCO_ORIGEN] VALUE [34]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [PAISID_BANCO_DESTINO] VALUE [35]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [CVE_ENTIDAD_MERCANTIL] VALUE [36]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [CVE_TRANS_BENEFICIARIO] VALUE [37]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [CVE_ALTERNA_ORDENANTE] VALUE [38]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [DS_CONCEPTO_PAGO] VALUE [39]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [DS_BANCO_CORRESPONSAL_1] VALUE [40]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [DS_BANCO_CORRESPONSAL_2] VALUE [41]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [DS_BANCO_CORRESPONSAL_3] VALUE [42]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [DS_BANCO_CORRESPONSAL_4] VALUE [43]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [DS_BANCO_CORRESPONSAL_5] VALUE [44]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [DS_BANCO_CORRESPONSAL_6] VALUE [45]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [DS_BANCO_CORRESPONSAL_7] VALUE [46]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [DS_BANCO_CORRESPONSAL_8] VALUE [47]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [DS_BANCO_CORRESPONSAL_9] VALUE [48]DATATYPE [A] SWKEY [null] MASCARA [null]
+LABEL [DS_BANCO_CORRESPONSAL_10] VALUE [49]DATATYPE [A] SWKEY [null] MASCARA [null]
+2017-11-23 14:41:31,603 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ===== UPDATE CRITERIA LIST
+2017-11-23 14:41:31,604 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - 
+LABEL [CODOPER] VALUE [1]DATATYPE [A] SWKEY [S] MASCARA [null]
+LABEL [CONTRATANTECD] VALUE [4]DATATYPE [A] SWKEY [S] MASCARA [null]
+2017-11-23 14:41:31,604 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ------------ UPDATE SELECT ------------
+2017-11-23 14:41:31,604 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - UPDATE BANCA5.MTS_HOPERACIONESCNTR SET NUMPOLIZACNTR = TMP2.VALOR_02 , SUCURSALID = TMP2.VALOR_03 , AGENTEID = TMP2.VALOR_05 , PRODUCTOID = TMP2.VALOR_06 , INSTRMONETARIOID = TMP2.VALOR_07 , TIPOOPERACIONID = TMP2.VALOR_08 , FECHAOPERACIONCNTR = (SELECT convert(datetime,VALOR_09,103)), HORA_OPERACION = TMP2.VALOR_10 , MONTOCNTR = (SELECT REPLACE(VALOR_11,',','')), MONTOMNCNTR = (SELECT REPLACE(VALOR_12,',','')), MONTO_EFECTIVO = (SELECT REPLACE(VALOR_13,',','')), MONEDAID = TMP2.VALOR_14 , TIPOCAMBIOCNTR = TMP2.VALOR_15 , TASA_PACTADA = TMP2.VALOR_16 , CVE_BANCO_ORIGEN = TMP2.VALOR_17 , CVE_BANCO_DESTINO = TMP2.VALOR_18 , DS_BANCO_ORIGEN = TMP2.VALOR_19 , DS_BANCO_DESTINO = TMP2.VALOR_20 , DS_NOMBRE_DEPOSITANTE = TMP2.VALOR_21 , DS_NOMBRE_BENEFICIARIO = TMP2.VALOR_22 , CUENTA_BENEFICIARIO = TMP2.VALOR_23 , CUENTA_ORDENANTE = TMP2.VALOR_24 , CVE_TIPO_GARANTIA = TMP2.VALOR_25 , CVE_TRANS_ORDENANTE = TMP2.VALOR_26 , IMP_VALOR_GARANTIA = TMP2.VALOR_27 , NUMERO_GARANTIA = TMP2.VALOR_28 , FEC_APERTURA_CUENTA = (SELECT convert(datetime,VALOR_29,103)), FEC_CANCELACION_CREDITO = (SELECT convert(datetime,VALOR_30,103)), IMP_PAGO_MINIMO_LC = TMP2.VALOR_31 , IMP_SALDO_LC = TMP2.VALOR_32 , PLAZO_CREDITO_MESES = TMP2.VALOR_33 , PAISID_BANCO_ORIGEN = TMP2.VALOR_34 , PAISID_BANCO_DESTINO = TMP2.VALOR_35 , CVE_ENTIDAD_MERCANTIL = TMP2.VALOR_36 , CVE_TRANS_BENEFICIARIO = TMP2.VALOR_37 , CVE_ALTERNA_ORDENANTE = TMP2.VALOR_38 , DS_CONCEPTO_PAGO = TMP2.VALOR_39 , DS_BANCO_CORRESPONSAL_1 = TMP2.VALOR_40 , DS_BANCO_CORRESPONSAL_2 = TMP2.VALOR_41 , DS_BANCO_CORRESPONSAL_3 = TMP2.VALOR_42 , DS_BANCO_CORRESPONSAL_4 = TMP2.VALOR_43 , DS_BANCO_CORRESPONSAL_5 = TMP2.VALOR_44 , DS_BANCO_CORRESPONSAL_6 = TMP2.VALOR_45 , DS_BANCO_CORRESPONSAL_7 = TMP2.VALOR_46 , DS_BANCO_CORRESPONSAL_8 = TMP2.VALOR_47 , DS_BANCO_CORRESPONSAL_9 = TMP2.VALOR_48 , DS_BANCO_CORRESPONSAL_10 = TMP2.VALOR_49 ,  ID_PROCESO = ?  FROM BANCA5.MTS_HOPERACIONESCNTR CON, BANCA5.MTS_CARGAS_TEMPORALES TMP2 WHERE TMP2.ID_PROCESO = ?  AND TMP2.CVE_STATUS <> 'R'   AND CON.CODOPER =  TMP2.VALOR_01  AND CON.CONTRATANTECD =  TMP2.VALOR_04 
+2017-11-23 14:41:31,604 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ---------------------------------------
+2017-11-23 14:41:31,604 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - 
+					
+						SELECT A.ID_SECUENCIA_MAPEO, A.CONSTANTE, A.VALOR_DEFAULT, B.VALOR_ATRIBUTO_01 AS DEF_TIPO
+						FROM [schema].MTS_DMAPEO_VALIDACIONES A, [schema].MTS_ANA_DCATALOGOS_CLAVES  B
+						WHERE A.ID_LAYOUT = ?
+						AND A.CVE_TIPO_DATO = B.CLAVE_01
+						AND B.CVE_TABLA = 'CAT_TIPODATO_DEFAULT'
+						ORDER BY A.ID_ORDEN
+					
+			 BANCA5 16
+2017-11-23 14:41:31,808 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - VALORES CONTANTES Y DEFAULT....
+2017-11-23 14:41:31,811 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - 
+Cons [null] Default [null] SecMapeo [1] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [2] DefaultDataType [ ]
+Cons [null] Default [01] SecMapeo [3] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [4] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [5] DefaultDataType [ ]
+Cons [null] Default [1] SecMapeo [6] DefaultDataType [0]
+Cons [null] Default [null] SecMapeo [7] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [8] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [9] DefaultDataType [01/01/1956]
+Cons [null] Default [null] SecMapeo [10] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [11] DefaultDataType [0.00]
+Cons [null] Default [null] SecMapeo [12] DefaultDataType [0.00]
+Cons [null] Default [null] SecMapeo [13] DefaultDataType [0.00]
+Cons [null] Default [null] SecMapeo [14] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [15] DefaultDataType [0.00]
+Cons [null] Default [null] SecMapeo [16] DefaultDataType [0.00]
+Cons [null] Default [0] SecMapeo [17] DefaultDataType [ ]
+Cons [null] Default [0] SecMapeo [18] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [19] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [20] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [21] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [22] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [23] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [24] DefaultDataType [ ]
+Cons [null] Default [1] SecMapeo [25] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [28] DefaultDataType [0]
+Cons [null] Default [null] SecMapeo [26] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [27] DefaultDataType [0.00]
+Cons [null] Default [null] SecMapeo [29] DefaultDataType [01/01/1956]
+Cons [null] Default [null] SecMapeo [30] DefaultDataType [01/01/1956]
+Cons [null] Default [null] SecMapeo [31] DefaultDataType [0]
+Cons [null] Default [null] SecMapeo [32] DefaultDataType [0.00]
+Cons [null] Default [null] SecMapeo [33] DefaultDataType [0]
+Cons [null] Default [0] SecMapeo [34] DefaultDataType [ ]
+Cons [null] Default [0] SecMapeo [35] DefaultDataType [ ]
+Cons [null] Default [1] SecMapeo [36] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [37] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [38] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [39] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [40] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [41] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [42] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [43] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [44] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [45] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [46] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [47] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [48] DefaultDataType [ ]
+Cons [null] Default [null] SecMapeo [49] DefaultDataType [ ]
+2017-11-23 14:41:31,811 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - :::::::::. CREANDO DEFAULT Y CONSTANTES
+2017-11-23 14:41:31,811 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 1
+2017-11-23 14:41:31,818 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,819 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 2
+2017-11-23 14:41:31,819 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,819 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 3
+2017-11-23 14:41:31,819 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF VAL 3 - 01
+2017-11-23 14:41:31,819 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 4
+2017-11-23 14:41:31,819 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,819 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 5
+2017-11-23 14:41:31,819 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,819 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 6
+2017-11-23 14:41:31,819 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF VAL 6 - 1
+2017-11-23 14:41:31,820 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 7
+2017-11-23 14:41:31,820 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,820 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 8
+2017-11-23 14:41:31,820 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,820 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 9
+2017-11-23 14:41:31,820 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 9 - 01/01/1956
+2017-11-23 14:41:31,820 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 10
+2017-11-23 14:41:31,820 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,820 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 11
+2017-11-23 14:41:31,820 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 11 - 0.00
+2017-11-23 14:41:31,820 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 12
+2017-11-23 14:41:31,820 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 12 - 0.00
+2017-11-23 14:41:31,821 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 13
+2017-11-23 14:41:31,821 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 13 - 0.00
+2017-11-23 14:41:31,821 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 14
+2017-11-23 14:41:31,821 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,821 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 15
+2017-11-23 14:41:31,821 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 15 - 0.00
+2017-11-23 14:41:31,821 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 16
+2017-11-23 14:41:31,821 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 16 - 0.00
+2017-11-23 14:41:31,821 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 17
+2017-11-23 14:41:31,821 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF VAL 17 - 0
+2017-11-23 14:41:31,821 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 18
+2017-11-23 14:41:31,821 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF VAL 18 - 0
+2017-11-23 14:41:31,821 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 19
+2017-11-23 14:41:31,822 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,822 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 20
+2017-11-23 14:41:31,822 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,822 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 21
+2017-11-23 14:41:31,822 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,822 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 22
+2017-11-23 14:41:31,822 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,822 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 23
+2017-11-23 14:41:31,822 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,822 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 24
+2017-11-23 14:41:31,822 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,822 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 25
+2017-11-23 14:41:31,822 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF VAL 25 - 1
+2017-11-23 14:41:31,822 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 28
+2017-11-23 14:41:31,822 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 28 - 0
+2017-11-23 14:41:31,822 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 26
+2017-11-23 14:41:31,823 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,823 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 27
+2017-11-23 14:41:31,823 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 27 - 0.00
+2017-11-23 14:41:31,823 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 29
+2017-11-23 14:41:31,823 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 29 - 01/01/1956
+2017-11-23 14:41:31,823 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 30
+2017-11-23 14:41:31,823 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 30 - 01/01/1956
+2017-11-23 14:41:31,823 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 31
+2017-11-23 14:41:31,823 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 31 - 0
+2017-11-23 14:41:31,823 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 32
+2017-11-23 14:41:31,823 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 32 - 0.00
+2017-11-23 14:41:31,823 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 33
+2017-11-23 14:41:31,823 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 33 - 0
+2017-11-23 14:41:31,823 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 34
+2017-11-23 14:41:31,823 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF VAL 34 - 0
+2017-11-23 14:41:31,824 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 35
+2017-11-23 14:41:31,824 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF VAL 35 - 0
+2017-11-23 14:41:31,824 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 36
+2017-11-23 14:41:31,824 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF VAL 36 - 1
+2017-11-23 14:41:31,824 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 37
+2017-11-23 14:41:31,824 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,824 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 38
+2017-11-23 14:41:31,824 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,824 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 39
+2017-11-23 14:41:31,824 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,824 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 40
+2017-11-23 14:41:31,824 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,824 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 41
+2017-11-23 14:41:31,824 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,825 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 42
+2017-11-23 14:41:31,825 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,825 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 43
+2017-11-23 14:41:31,825 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,825 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 44
+2017-11-23 14:41:31,825 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,825 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 45
+2017-11-23 14:41:31,825 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,825 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 46
+2017-11-23 14:41:31,825 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,825 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 47
+2017-11-23 14:41:31,825 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,825 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 48
+2017-11-23 14:41:31,826 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,826 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - ID : 49
+2017-11-23 14:41:31,826 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - AGRENDANDO DEF TIPO 
+2017-11-23 14:41:31,826 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - -------- UPDATE DEFAULT VALUES ------
+2017-11-23 14:41:31,826 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - test : UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_03 = '01' WHERE VALOR_03 IS NULL OR VALOR_03 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:31,826 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - test : UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_06 = '1' WHERE VALOR_06 IS NULL OR VALOR_06 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:31,826 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - test : UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_09 = '01/01/1956' WHERE VALOR_09 IS NULL OR VALOR_09 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:31,826 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - test : UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_11 = '0.00' WHERE VALOR_11 IS NULL OR VALOR_11 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:31,826 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - test : UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_12 = '0.00' WHERE VALOR_12 IS NULL OR VALOR_12 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:31,826 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - test : UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_13 = '0.00' WHERE VALOR_13 IS NULL OR VALOR_13 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:31,826 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - test : UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_15 = '0.00' WHERE VALOR_15 IS NULL OR VALOR_15 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:31,826 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - test : UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_16 = '0.00' WHERE VALOR_16 IS NULL OR VALOR_16 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:31,826 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - test : UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_17 = '0' WHERE VALOR_17 IS NULL OR VALOR_17 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:31,826 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - test : UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_18 = '0' WHERE VALOR_18 IS NULL OR VALOR_18 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:31,826 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - test : UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_25 = '1' WHERE VALOR_25 IS NULL OR VALOR_25 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:31,826 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - test : UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_28 = '0' WHERE VALOR_28 IS NULL OR VALOR_28 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:31,827 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - test : UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_27 = '0.00' WHERE VALOR_27 IS NULL OR VALOR_27 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:31,827 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - test : UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_29 = '01/01/1956' WHERE VALOR_29 IS NULL OR VALOR_29 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:31,827 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - test : UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_30 = '01/01/1956' WHERE VALOR_30 IS NULL OR VALOR_30 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:31,827 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - test : UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_31 = '0' WHERE VALOR_31 IS NULL OR VALOR_31 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:31,827 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - test : UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_32 = '0.00' WHERE VALOR_32 IS NULL OR VALOR_32 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:31,827 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - test : UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_33 = '0' WHERE VALOR_33 IS NULL OR VALOR_33 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:31,827 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - test : UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_34 = '0' WHERE VALOR_34 IS NULL OR VALOR_34 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:31,827 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - test : UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_35 = '0' WHERE VALOR_35 IS NULL OR VALOR_35 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:31,827 -0600 | DEBUG | com.web.common.LoadCommonPropertiesValidate - test : UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_36 = '1' WHERE VALOR_36 IS NULL OR VALOR_36 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:31,828 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - :::::::LISTA COL --------
+2017-11-23 14:41:31,828 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____:::::::::::SETEO DE CAMPOS
+2017-11-23 14:41:31,828 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____::::::::::: DEFAULT VALUES: 49
+2017-11-23 14:41:31,828 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____::::::::::: DEFAULT CONSTANTES: 0
+2017-11-23 14:41:31,828 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____::::::::::: ATRIBUTOS CONFIGURADOD: 49
+2017-11-23 14:41:31,947 -0600 | DEBUG | com.web.tmp.procesor.FileProcesor - REGISTRO [1]
+2017-11-23 14:41:31,947 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - :::::::LISTA COL --------
+2017-11-23 14:41:31,948 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____:::::::::::SETEO DE CAMPOS
+2017-11-23 14:41:31,948 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____::::::::::: DEFAULT VALUES: 49
+2017-11-23 14:41:31,948 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____::::::::::: DEFAULT CONSTANTES: 0
+2017-11-23 14:41:31,948 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____::::::::::: ATRIBUTOS CONFIGURADOD: 49
+2017-11-23 14:41:32,071 -0600 | DEBUG | com.web.tmp.procesor.FileProcesor - REGISTRO [2]
+2017-11-23 14:41:32,071 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - :::::::LISTA COL --------
+2017-11-23 14:41:32,071 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____:::::::::::SETEO DE CAMPOS
+2017-11-23 14:41:32,071 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____::::::::::: DEFAULT VALUES: 49
+2017-11-23 14:41:32,071 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____::::::::::: DEFAULT CONSTANTES: 0
+2017-11-23 14:41:32,071 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____::::::::::: ATRIBUTOS CONFIGURADOD: 49
+2017-11-23 14:41:32,197 -0600 | DEBUG | com.web.tmp.procesor.FileProcesor - REGISTRO [3]
+2017-11-23 14:41:32,198 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - :::::::LISTA COL --------
+2017-11-23 14:41:32,198 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____:::::::::::SETEO DE CAMPOS
+2017-11-23 14:41:32,198 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____::::::::::: DEFAULT VALUES: 49
+2017-11-23 14:41:32,198 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____::::::::::: DEFAULT CONSTANTES: 0
+2017-11-23 14:41:32,198 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____::::::::::: ATRIBUTOS CONFIGURADOD: 49
+2017-11-23 14:41:32,313 -0600 | DEBUG | com.web.tmp.procesor.FileProcesor - REGISTRO [4]
+2017-11-23 14:41:32,313 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - :::::::LISTA COL --------
+2017-11-23 14:41:32,313 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____:::::::::::SETEO DE CAMPOS
+2017-11-23 14:41:32,313 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____::::::::::: DEFAULT VALUES: 49
+2017-11-23 14:41:32,313 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____::::::::::: DEFAULT CONSTANTES: 0
+2017-11-23 14:41:32,313 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____::::::::::: ATRIBUTOS CONFIGURADOD: 49
+2017-11-23 14:41:32,810 -0600 | DEBUG | com.web.tmp.procesor.FileProcesor - REGISTRO [5]
+2017-11-23 14:41:32,810 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - :::::::LISTA COL --------
+2017-11-23 14:41:32,810 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____:::::::::::SETEO DE CAMPOS
+2017-11-23 14:41:32,810 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____::::::::::: DEFAULT VALUES: 49
+2017-11-23 14:41:32,810 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____::::::::::: DEFAULT CONSTANTES: 0
+2017-11-23 14:41:32,810 -0600 | INFO | com.web.annotation.ValidateMasiveLoad - _____::::::::::: ATRIBUTOS CONFIGURADOD: 49
+2017-11-23 14:41:40,416 -0600 | DEBUG | com.web.tmp.tasklet.LoadFinalTask - **** INICIA LA TAREA FINAL DE CARGA 
+ CVE TIPO DE CARGA [O]
+ CVE TABLA ISERT [MTS_HOPERACIONESCNTR]
+2017-11-23 14:41:40,416 -0600 | DEBUG | com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation - PRESISTE INFORMACION ARRAY QUERY
+2017-11-23 14:41:40,465 -0600 | DEBUG | com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation - UPDATED[0] PROCESO [6710] QUERY =  UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_03 = '01' WHERE VALOR_03 IS NULL OR VALOR_03 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:40,558 -0600 | DEBUG | com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation - UPDATED[0] PROCESO [6710] QUERY =  UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_06 = '1' WHERE VALOR_06 IS NULL OR VALOR_06 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:40,623 -0600 | DEBUG | com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation - UPDATED[0] PROCESO [6710] QUERY =  UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_09 = '01/01/1956' WHERE VALOR_09 IS NULL OR VALOR_09 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:40,696 -0600 | DEBUG | com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation - UPDATED[0] PROCESO [6710] QUERY =  UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_11 = '0.00' WHERE VALOR_11 IS NULL OR VALOR_11 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:40,836 -0600 | DEBUG | com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation - UPDATED[0] PROCESO [6710] QUERY =  UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_12 = '0.00' WHERE VALOR_12 IS NULL OR VALOR_12 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:41,056 -0600 | DEBUG | com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation - UPDATED[6] PROCESO [6710] QUERY =  UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_13 = '0.00' WHERE VALOR_13 IS NULL OR VALOR_13 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:41,277 -0600 | DEBUG | com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation - UPDATED[0] PROCESO [6710] QUERY =  UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_15 = '0.00' WHERE VALOR_15 IS NULL OR VALOR_15 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:41,419 -0600 | DEBUG | com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation - UPDATED[0] PROCESO [6710] QUERY =  UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_16 = '0.00' WHERE VALOR_16 IS NULL OR VALOR_16 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:41,777 -0600 | DEBUG | com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation - UPDATED[0] PROCESO [6710] QUERY =  UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_17 = '0' WHERE VALOR_17 IS NULL OR VALOR_17 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:42,485 -0600 | DEBUG | com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation - UPDATED[2] PROCESO [6710] QUERY =  UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_18 = '0' WHERE VALOR_18 IS NULL OR VALOR_18 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:42,865 -0600 | DEBUG | com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation - UPDATED[6] PROCESO [6710] QUERY =  UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_25 = '1' WHERE VALOR_25 IS NULL OR VALOR_25 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:43,479 -0600 | DEBUG | com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation - UPDATED[6] PROCESO [6710] QUERY =  UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_28 = '0' WHERE VALOR_28 IS NULL OR VALOR_28 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:44,175 -0600 | DEBUG | com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation - UPDATED[6] PROCESO [6710] QUERY =  UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_27 = '0.00' WHERE VALOR_27 IS NULL OR VALOR_27 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:44,901 -0600 | DEBUG | com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation - UPDATED[5] PROCESO [6710] QUERY =  UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_29 = '01/01/1956' WHERE VALOR_29 IS NULL OR VALOR_29 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:45,229 -0600 | DEBUG | com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation - UPDATED[5] PROCESO [6710] QUERY =  UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_30 = '01/01/1956' WHERE VALOR_30 IS NULL OR VALOR_30 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:45,535 -0600 | DEBUG | com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation - UPDATED[5] PROCESO [6710] QUERY =  UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_31 = '0' WHERE VALOR_31 IS NULL OR VALOR_31 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:46,019 -0600 | DEBUG | com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation - UPDATED[5] PROCESO [6710] QUERY =  UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_32 = '0.00' WHERE VALOR_32 IS NULL OR VALOR_32 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:46,265 -0600 | DEBUG | com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation - UPDATED[5] PROCESO [6710] QUERY =  UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_33 = '0' WHERE VALOR_33 IS NULL OR VALOR_33 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:46,488 -0600 | DEBUG | com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation - UPDATED[2] PROCESO [6710] QUERY =  UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_34 = '0' WHERE VALOR_34 IS NULL OR VALOR_34 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:46,699 -0600 | DEBUG | com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation - UPDATED[3] PROCESO [6710] QUERY =  UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_35 = '0' WHERE VALOR_35 IS NULL OR VALOR_35 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:47,020 -0600 | DEBUG | com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation - UPDATED[2] PROCESO [6710] QUERY =  UPDATE BANCA5.MTS_CARGAS_TEMPORALES SET VALOR_36 = '1' WHERE VALOR_36 IS NULL OR VALOR_36 =  ''  AND  ID_PROCESO = ? 
+2017-11-23 14:41:47,020 -0600 | DEBUG | com.web.tmp.tasklet.PersistenceFinalTaskDaoImplementation - QUERY PARA OBTENER ERRORES >> 
+				
+					SELECT COUNT(*) FROM [schema].MTS_CARGAS_TEMPORALES WHERE CVE_STATUS = 'R' AND ID_PROCESO = ?
+				
+			
+2017-11-23 14:41:47,270 -0600 | DEBUG | com.web.tmp.tasklet.LoadFinalTask - QUERY TO INSERT: INSERT INTO BANCA5.MTS_HOPERACIONESCNTR(CODOPER,NUMPOLIZACNTR,SUCURSALID,CONTRATANTECD,AGENTEID,PRODUCTOID,INSTRMONETARIOID,TIPOOPERACIONID,FECHAOPERACIONCNTR,HORA_OPERACION,MONTOCNTR,MONTOMNCNTR,MONTO_EFECTIVO,MONEDAID,TIPOCAMBIOCNTR,TASA_PACTADA,CVE_BANCO_ORIGEN,CVE_BANCO_DESTINO,DS_BANCO_ORIGEN,DS_BANCO_DESTINO,DS_NOMBRE_DEPOSITANTE,DS_NOMBRE_BENEFICIARIO,CUENTA_BENEFICIARIO,CUENTA_ORDENANTE,CVE_TIPO_GARANTIA,CVE_TRANS_ORDENANTE,IMP_VALOR_GARANTIA,NUMERO_GARANTIA,FEC_APERTURA_CUENTA,FEC_CANCELACION_CREDITO,IMP_PAGO_MINIMO_LC,IMP_SALDO_LC,PLAZO_CREDITO_MESES,PAISID_BANCO_ORIGEN,PAISID_BANCO_DESTINO,CVE_ENTIDAD_MERCANTIL,CVE_TRANS_BENEFICIARIO,CVE_ALTERNA_ORDENANTE,DS_CONCEPTO_PAGO,DS_BANCO_CORRESPONSAL_1,DS_BANCO_CORRESPONSAL_2,DS_BANCO_CORRESPONSAL_3,DS_BANCO_CORRESPONSAL_4,DS_BANCO_CORRESPONSAL_5,DS_BANCO_CORRESPONSAL_6,DS_BANCO_CORRESPONSAL_7,DS_BANCO_CORRESPONSAL_8,DS_BANCO_CORRESPONSAL_9,DS_BANCO_CORRESPONSAL_10,ID_PROCESO)SELECT VALOR_01,VALOR_02,VALOR_03,VALOR_04,VALOR_05,VALOR_06,VALOR_07,VALOR_08,(SELECT convert(datetime,VALOR_09,103)),VALOR_10,(SELECT REPLACE(VALOR_11,',','')),(SELECT REPLACE(VALOR_12,',','')),(SELECT REPLACE(VALOR_13,',','')),VALOR_14,VALOR_15,VALOR_16,VALOR_17,VALOR_18,VALOR_19,VALOR_20,VALOR_21,VALOR_22,VALOR_23,VALOR_24,VALOR_25,VALOR_26,VALOR_27,VALOR_28,(SELECT convert(datetime,VALOR_29,103)),(SELECT convert(datetime,VALOR_30,103)),VALOR_31,VALOR_32,VALOR_33,VALOR_34,VALOR_35,VALOR_36,VALOR_37,VALOR_38,VALOR_39,VALOR_40,VALOR_41,VALOR_42,VALOR_43,VALOR_44,VALOR_45,VALOR_46,VALOR_47,VALOR_48,VALOR_49,ID_PROCESO FROM BANCA5.MTS_CARGAS_TEMPORALES WHERE CVE_STATUS = 'V' AND     ID_PROCESO  = ? AND     NOT EXISTS (SELECT  NULL FROM BANCA5.MTS_HOPERACIONESCNTR CONT2 WHERE  CONT2.CODOPER = VALOR_01 AND  CONT2.CONTRATANTECD = VALOR_04)
+2017-11-23 14:41:47,503 -0600 | INFO | org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2017-11-23 14:41:47,541 -0600 | INFO | com.web.tmp.tasklet.LoadFinalTask - FASE [1] : 
+ REGISTROS ACTUALIZADOS [58] 
+ TOTAL DE REGISTROS PARA ACTUALIZAR [21]
+ REGISTROS CON STATUS RECHAZADO [0]
+ ESTATUS DE LA CARGA [T]
+ NUMERO DE REGISTROS INSERTADOS [0]
+2017-11-23 14:41:47,615 -0600 | DEBUG | com.web.tmp.tasklet.LoadFinalTask - 
+ ======== CARGA DE ARCHIVO CON ERRORES : 
+ CARGA DE ARCHIVOS CON ERRORES [true]
+ ISOPERACIONES [true]
+ QUERY UPDATESELECT [UPDATE BANCA5.MTS_HOPERACIONESCNTR SET NUMPOLIZACNTR = TMP2.VALOR_02 , SUCURSALID = TMP2.VALOR_03 , AGENTEID = TMP2.VALOR_05 , PRODUCTOID = TMP2.VALOR_06 , INSTRMONETARIOID = TMP2.VALOR_07 , TIPOOPERACIONID = TMP2.VALOR_08 , FECHAOPERACIONCNTR = (SELECT convert(datetime,VALOR_09,103)), HORA_OPERACION = TMP2.VALOR_10 , MONTOCNTR = (SELECT REPLACE(VALOR_11,',','')), MONTOMNCNTR = (SELECT REPLACE(VALOR_12,',','')), MONTO_EFECTIVO = (SELECT REPLACE(VALOR_13,',','')), MONEDAID = TMP2.VALOR_14 , TIPOCAMBIOCNTR = TMP2.VALOR_15 , TASA_PACTADA = TMP2.VALOR_16 , CVE_BANCO_ORIGEN = TMP2.VALOR_17 , CVE_BANCO_DESTINO = TMP2.VALOR_18 , DS_BANCO_ORIGEN = TMP2.VALOR_19 , DS_BANCO_DESTINO = TMP2.VALOR_20 , DS_NOMBRE_DEPOSITANTE = TMP2.VALOR_21 , DS_NOMBRE_BENEFICIARIO = TMP2.VALOR_22 , CUENTA_BENEFICIARIO = TMP2.VALOR_23 , CUENTA_ORDENANTE = TMP2.VALOR_24 , CVE_TIPO_GARANTIA = TMP2.VALOR_25 , CVE_TRANS_ORDENANTE = TMP2.VALOR_26 , IMP_VALOR_GARANTIA = TMP2.VALOR_27 , NUMERO_GARANTIA = TMP2.VALOR_28 , FEC_APERTURA_CUENTA = (SELECT convert(datetime,VALOR_29,103)), FEC_CANCELACION_CREDITO = (SELECT convert(datetime,VALOR_30,103)), IMP_PAGO_MINIMO_LC = TMP2.VALOR_31 , IMP_SALDO_LC = TMP2.VALOR_32 , PLAZO_CREDITO_MESES = TMP2.VALOR_33 , PAISID_BANCO_ORIGEN = TMP2.VALOR_34 , PAISID_BANCO_DESTINO = TMP2.VALOR_35 , CVE_ENTIDAD_MERCANTIL = TMP2.VALOR_36 , CVE_TRANS_BENEFICIARIO = TMP2.VALOR_37 , CVE_ALTERNA_ORDENANTE = TMP2.VALOR_38 , DS_CONCEPTO_PAGO = TMP2.VALOR_39 , DS_BANCO_CORRESPONSAL_1 = TMP2.VALOR_40 , DS_BANCO_CORRESPONSAL_2 = TMP2.VALOR_41 , DS_BANCO_CORRESPONSAL_3 = TMP2.VALOR_42 , DS_BANCO_CORRESPONSAL_4 = TMP2.VALOR_43 , DS_BANCO_CORRESPONSAL_5 = TMP2.VALOR_44 , DS_BANCO_CORRESPONSAL_6 = TMP2.VALOR_45 , DS_BANCO_CORRESPONSAL_7 = TMP2.VALOR_46 , DS_BANCO_CORRESPONSAL_8 = TMP2.VALOR_47 , DS_BANCO_CORRESPONSAL_9 = TMP2.VALOR_48 , DS_BANCO_CORRESPONSAL_10 = TMP2.VALOR_49 ,  ID_PROCESO = ?  FROM BANCA5.MTS_HOPERACIONESCNTR CON, BANCA5.MTS_CARGAS_TEMPORALES TMP2 WHERE TMP2.ID_PROCESO = ?  AND TMP2.CVE_STATUS <> 'R'   AND CON.CODOPER =  TMP2.VALOR_01  AND CON.CONTRATANTECD =  TMP2.VALOR_04 ]
+ QUERY ARCHIVOS PROCESADOS [
+				
+				INSERT INTO [[schema]].MTS_EXT_ARCHIVOS_PROCESADOS
+(ID_PROCESO,
+NOMBRE_ARCHIVO,
+REGLEIDOS,
+REGRECHAZADOS,
+REGVALIDOS,
+REGINSERTADOS,
+REGACTUALIZADOS,
+CVE_TIPO_ARCHIVO,
+SW_VALIDA_CC,
+CREADO_POR,
+FEC_CREACION,
+MONTOREGVALIDOS)
+VALUES
+(?,?,
+(SELECT COUNT(*) FROM [[schema]].MTS_CARGAS_TEMPORALES WHERE VALOR_01 <> '@' AND ID_PROCESO = ?),
+(SELECT COUNT(*) FROM [[schema]].MTS_CARGAS_TEMPORALES WHERE CVE_STATUS = 'R' AND VALOR_01 <> '@' AND ID_PROCESO = ?),
+(SELECT COUNT(*) FROM [[schema]].MTS_CARGAS_TEMPORALES WHERE CVE_STATUS = 'V' AND VALOR_01 <> '@' AND ID_PROCESO = ?),
+?,?,?,
+'S', ?, GETDATE(),
+?);
+				
+			]
+ INSERT SELECT insDetalleError [
+				
+				INSERT INTO [[schema]].MTS_LAYOUT_DETALLE_VALIDACIONES(ID_PROCESO, ID_REGISTRO, DSERROR)
+(SELECT ID_PROCESO, ID_REGISTRO, DS_ERROR FROM [[schema]].MTS_CARGAS_TEMPORALES WHERE CVE_STATUS = 'R' AND ID_PROCESO = ? AND VALOR_01 <> '@')
+				
+			] 
+2017-11-23 14:41:47,881 -0600 | DEBUG | com.web.tmp.tasklet.LoadFinalTask - antes del error :::::::
+2017-11-23 14:41:47,882 -0600 | DEBUG | com.web.tmp.tasklet.LoadFinalTask - ERROR ::: 
+				
+				INSERT INTO [BANCA5].MTS_EXT_ARCHIVOS_PROCESADOS
+(ID_PROCESO,
+NOMBRE_ARCHIVO,
+REGLEIDOS,
+REGRECHAZADOS,
+REGVALIDOS,
+REGINSERTADOS,
+REGACTUALIZADOS,
+CVE_TIPO_ARCHIVO,
+SW_VALIDA_CC,
+CREADO_POR,
+FEC_CREACION,
+MONTOREGVALIDOS)
+VALUES
+(?,?,
+(SELECT COUNT(*) FROM [BANCA5].MTS_CARGAS_TEMPORALES WHERE VALOR_01 <> '@' AND ID_PROCESO = ?),
+(SELECT COUNT(*) FROM [BANCA5].MTS_CARGAS_TEMPORALES WHERE CVE_STATUS = 'R' AND VALOR_01 <> '@' AND ID_PROCESO = ?),
+(SELECT COUNT(*) FROM [BANCA5].MTS_CARGAS_TEMPORALES WHERE CVE_STATUS = 'V' AND VALOR_01 <> '@' AND ID_PROCESO = ?),
+?,?,?,
+'S', ?, GETDATE(),
+?);
+				
+			
+2017-11-23 14:41:48,237 -0600 | DEBUG | com.web.tmp.tasklet.LoadFinalTask - Se ha generado un conjunto de resultados para actualización.
+2017-11-23 14:41:48,237 -0600 | DEBUG | com.web.tmp.tasklet.LoadFinalTask - com.microsoft.sqlserver.jdbc.SQLServerException: Se ha generado un conjunto de resultados para actualización.
+2017-11-23 14:41:48,238 -0600 | DEBUG | com.web.tmp.tasklet.LoadFinalTask - DETALLE DE ERROR [6710] 
+ QUERY TO INSERT DETALLE [
+				
+				INSERT INTO [BANCA5].MTS_LAYOUT_DETALLE_VALIDACIONES(ID_PROCESO, ID_REGISTRO, DSERROR)
+(SELECT ID_PROCESO, ID_REGISTRO, DS_ERROR FROM [BANCA5].MTS_CARGAS_TEMPORALES WHERE CVE_STATUS = 'R' AND ID_PROCESO = ? AND VALOR_01 <> '@')
+				
+			]
+2017-11-23 14:41:48,500 -0600 | DEBUG | com.web.tmp.tasklet.LoadFinalTask - TERMINA PROCESO DE CARGA 
+ LIMPIA ARCHIVO Y PERSISTE EN BITACORA 
+ Status[T] REGISTROS ERROR [0]
+ ID PROCESO [6710]
+ QUERY TO INSERT 
+				
+UPDATE [BANCA5].MTS_ANA_BITACORA_PROCESOS
+					SET
+						FECHA_FIN_PROCESO = GETDATE(),
+						CVE_ESTATUS_PROCESO = ?,
+						ACTUALIZADO_POR = ?,
+						FEC_ACTUALIZACION = GETDATE(),
+						MSG_PROCESO = ?
+					WHERE ID_PROCESO = ?
+				
+			
+2017-11-23 14:41:48,612 -0600 | INFO | com.web.tmp.tasklet.LoadFinalTask - Limpiando Tablas TEMPORALES...
+2017-11-23 14:41:48,655 -0600 | INFO | com.web.tmp.tasklet.LoadFinalTask - EL ARCHIVO SE ELIMINO DE FORMA CORRECTA
+2017-11-23 14:41:48,663 -0600 | INFO | org.springframework.context.support.ClassPathXmlApplicationContext - Closing org.springframework.context.support.ClassPathXmlApplicationContext@63e31ee: startup date [Thu Nov 23 14:41:10 CST 2017]; root of context hierarchy
+2017-11-23 14:41:48,663 -0600 | INFO | org.springframework.beans.factory.support.DefaultListableBeanFactory - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@17d677df: defining beans [propertyConfigurer,org.springframework.batch.test.JobLauncherTestUtils#0,jobRepository,transactionManager,jobLauncher,dataSourceTmp,dataSourcePLD,loadPropertiesImpl,loadCommonPropertiesValidate,fileTmpModel,org.springframework.batch.core.scope.internalStepScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,loadFileToTmpTables,tmpToFinalTables,finalTaskError,loadFile,loadFailTask,persistenceFinalTask,lodFinalTablesTask,validateLoad,rowProcessor,fileCsvGenericReader,loadFileWriter,scopedTarget.fileTmpModel,scopedTarget.lodFinalTablesTask,scopedTarget.com.web.tmp.procesor.FileProcesor#26aa12dd,com.web.tmp.procesor.FileProcesor#26aa12dd,scopedTarget.fileCsvGenericReader,scopedTarget.loadFileWriter]; root of factory hierarchy
