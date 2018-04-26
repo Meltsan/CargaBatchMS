@@ -81,17 +81,17 @@ public class LoadCommonPropertiesTest {
 		
 		//ATRIBUTES PROPS
 		List<ValidateAttribute> attrList = new ArrayList<ValidateAttribute>();
-			attrList.add(new ValidateAttribute("1", 8, "S", "A", "SUCURALID"));
-			attrList.add(new ValidateAttribute("2", 50, "S", "A", "DS_SUCURSAL"));
-			attrList.add(new ValidateAttribute("3", 8, "S", "A", "PAISID"));
-			attrList.add(new ValidateAttribute("4", 8, "S", "A", "ESTADOID"));
-			attrList.add(new ValidateAttribute("5", 8, "S", "A", "MUNICIPIOID"));
-			attrList.add(new ValidateAttribute("6", 8, "S", "A", "COLONIAID"));
-			attrList.add(new ValidateAttribute("7", 5, "S", "A", "SUCURSALCP"));
-			attrList.add(new ValidateAttribute("8", 50, "S", "A", "SUCURSALDIR"));
-			attrList.add(new ValidateAttribute("9", 20, "S", "A", "NO_EXTERIOR"));
-			attrList.add(new ValidateAttribute("10", 20, "S", "A", "NO_INTERIOR"));
-			attrList.add(new ValidateAttribute("11", 2, "S", "A", "VIGENCIA"));
+			attrList.add(new ValidateAttribute("1", 8, "S", "A", "SUCURALID","112"));
+			attrList.add(new ValidateAttribute("2", 50, "S", "A", "DS_SUCURSAL","112"));
+			attrList.add(new ValidateAttribute("3", 8, "S", "A", "PAISID","112"));
+			attrList.add(new ValidateAttribute("4", 8, "S", "A", "ESTADOID","112"));
+			attrList.add(new ValidateAttribute("5", 8, "S", "A", "MUNICIPIOID","112"));
+			attrList.add(new ValidateAttribute("6", 8, "S", "A", "COLONIAID","112"));
+			attrList.add(new ValidateAttribute("7", 5, "S", "A", "SUCURSALCP","112"));
+			attrList.add(new ValidateAttribute("8", 50, "S", "A", "SUCURSALDIR","112"));
+			attrList.add(new ValidateAttribute("9", 20, "S", "A", "NO_EXTERIOR","112"));
+			attrList.add(new ValidateAttribute("10", 20, "S", "A", "NO_INTERIOR","112"));
+			attrList.add(new ValidateAttribute("11", 2, "S", "A", "VIGENCIA","112"));
 
 			when(propertiesInterface.getQueryValidateAttr(null, SCHEMA_SOFOM, null))
 			.thenReturn(attrList);

@@ -53,25 +53,6 @@ public class TemporalMapper implements FieldSetMapper<CommonModel>{
 			result.setCol31(field.readString(30).trim());			
 			result.setCol32(field.readString(31).trim());			
 			result.setCol33(field.readString(32).trim());			
-			result.setCol34(field.readString(33).trim());			
-			result.setCol35(field.readString(34).trim());			
-			result.setCol36(field.readString(35).trim());			
-			result.setCol37(field.readString(36).trim());			
-			result.setCol38(field.readString(37).trim());
-			result.setCol39(field.readString(38).trim());
-			result.setCol40(field.readString(39).trim());
-			result.setCol41(field.readString(40).trim());
-			result.setCol42(field.readString(41).trim());
-			result.setCol43(field.readString(42).trim());
-			result.setCol44(field.readString(43).trim());
-			result.setCol45(field.readString(44).trim());
-			result.setCol46(field.readString(45).trim());
-			result.setCol47(field.readString(46).trim());
-			result.setCol48(field.readString(47).trim());
-			result.setCol49(field.readString(48).trim());
-			result.setCol50(field.readString(49).trim());
-		
-			
 		}catch(ArrayIndexOutOfBoundsException e){
 			
 			

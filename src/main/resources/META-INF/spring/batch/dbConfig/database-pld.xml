@@ -11,10 +11,9 @@
 		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
 
 		<property name="url"
-                  value="jdbc:sqlserver://10.30.5.40:1437;instanceName=MSSQLS08;databaseName=BOC_UAT" />
-                <property name="username" value="sa" />
-                <property name="password" value="Meltsan*?2017" />
-
+                  value="jdbc:sqlserver://dev-admin.meltsan.com:1433;instanceName=MSSQLS08;databaseName=MSUAT_KUSPIT" />
+                <property name="username" value="MSUAT_ADM" />
+                <property name="password" value="msu4t_4dm" />
 
 	</bean>
 

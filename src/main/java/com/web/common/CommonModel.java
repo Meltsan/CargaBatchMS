@@ -45,17 +45,6 @@ public class CommonModel {
 	public String col37;
 	public String col38;
 	public String col39;
-	public String col40;
-	public String col41;
-	public String col42;
-	public String col43;
-	public String col44;
-	public String col45;
-	public String col46;
-	public String col47;
-	public String col48;
-	public String col49;
-	public String col50;
 	public String descError;
 	public String status;
 	
@@ -316,72 +305,6 @@ public class CommonModel {
 	}
 	public void setCol39(String col39) {
 		this.col39 = col39;
-	}
-	public String getCol40() {
-		return col40;
-	}
-	public void setCol40(String col40) {
-		this.col40 = col40;
-	}
-	public String getCol41() {
-		return col41;
-	}
-	public void setCol41(String col41) {
-		this.col41 = col41;
-	}
-	public String getCol42() {
-		return col42;
-	}
-	public void setCol42(String col42) {
-		this.col42 = col42;
-	}
-	public String getCol43() {
-		return col43;
-	}
-	public void setCol43(String col43) {
-		this.col43 = col43;
-	}
-	public String getCol44() {
-		return col44;
-	}
-	public void setCol44(String col44) {
-		this.col44 = col44;
-	}
-	public String getCol45() {
-		return col45;
-	}
-	public void setCol45(String col45) {
-		this.col45 = col45;
-	}
-	public String getCol46() {
-		return col46;
-	}
-	public void setCol46(String col46) {
-		this.col46 = col46;
-	}
-	public String getCol47() {
-		return col47;
-	}
-	public void setCol47(String col47) {
-		this.col47 = col47;
-	}
-	public String getCol48() {
-		return col48;
-	}
-	public void setCol48(String col48) {
-		this.col48 = col48;
-	}
-	public String getCol49() {
-		return col49;
-	}
-	public void setCol49(String col49) {
-		this.col49 = col49;
-	}
-	public String getCol50() {
-		return col50;
-	}
-	public void setCol50(String col50) {
-		this.col50 = col50;
 	}
 	
 	

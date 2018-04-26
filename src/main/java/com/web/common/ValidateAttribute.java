@@ -7,14 +7,16 @@ public class ValidateAttribute {
 	private String swTipoDato;
 	private String cveTipoDato;
 	private String nombreColumna;
+	private String mascara;
 	
 	public ValidateAttribute(){}
-	public ValidateAttribute(String secuencia, int longitud, String tipoDato, String cveTipo, String nombreColumna){
+	public ValidateAttribute(String secuencia, int longitud, String tipoDato, String cveTipo, String nombreColumna, String mascara){
 		this.idSecuencia = secuencia;
 		this.longitud = longitud;
 		this.swTipoDato = tipoDato;
 		this.cveTipoDato = cveTipo;
 		this.nombreColumna = nombreColumna;
+		this.mascara = mascara;
 	}
 	
 	public String getIdSecuencia() {
@@ -47,6 +49,13 @@ public class ValidateAttribute {
 	}
 	public void setNombreColumna(String nombreColumna) {
 		this.nombreColumna = nombreColumna;
+	}
+	
+	public String getMascara() {
+		return mascara;
+	}
+	public void setMascara(String mascara) {
+		this.mascara = mascara;
 	}
 	public String toString(){
 		

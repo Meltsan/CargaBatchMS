@@ -1,6 +1,7 @@
 package com.web.common;
 
 import static com.web.utils.UtilsProccess.replaceSchema;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -43,6 +44,9 @@ public class LoadPropertiesImpl extends Jdbc implements LoadPropertiesInterface{
 		return fieldsNotNull;
 	}
 
+	
+	
+
 	@Override
 	public List<CommonMapperConsVo> getConstantsDefault(String qryConstantesDefault, String schema, String idLayout) {
 		
@@ -71,12 +75,12 @@ public class LoadPropertiesImpl extends Jdbc implements LoadPropertiesInterface{
 					public ValidateAttribute mapRow(ResultSet rs, int arg1)
 							throws SQLException {
 						ValidateAttribute result = new ValidateAttribute();
-
 						result.setIdSecuencia(rs.getString(1));
 						result.setLongitud(rs.getInt(2));
 						result.setCveTipoDato(rs.getString(3));
 						result.setSwTipoDato(rs.getString(4));
 						result.setNombreColumna(rs.getString(5));
+						result.setMascara(rs.getString(6));
 
 						return result;
 					}

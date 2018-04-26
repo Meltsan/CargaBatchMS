@@ -1,11 +1,13 @@
 package com.web.common;
 
 import static com.web.utils.UtilsProccess.postValue;
+import static com.web.utils.UtilsProccess.replaceSchema;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
@@ -38,6 +40,8 @@ public class LoadCommonPropertiesValidate extends Jdbc {
 	private static final String AND = " AND ";
 	private static final String UPDATE = " UPDATE ";
 	private static final String POINT = ".";
+	
+	
 	private static final Object QRY_PROCESO_CRITERIA = " ID_PROCESO = ? ";
 	private static final String UPDATE_TEXT_ENG = "A result set was generated for update.";
 	private static final String UPDATE_TEXT_ESP = "Se ha generado un conjunto de resultados para actualización.";
@@ -85,6 +89,11 @@ public class LoadCommonPropertiesValidate extends Jdbc {
 	/**
 	 * inicializa las variable requeridas
 	 */
+	
+	
+	
+	
+	
 	public void init() {
 
 		initNotNullList();
@@ -522,6 +531,9 @@ public class LoadCommonPropertiesValidate extends Jdbc {
 		return MsgSuccess;
 		
 	}
+	
+	
+
 	
 	public LoadPropertiesInterface getLoadProperties() {
 		return loadProperties;

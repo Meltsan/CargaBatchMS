@@ -81,5 +81,6 @@ public interface LoadPropertiesInterface {
 	 * @return 
 	 */
 	public List<CatalogValidatorVo> getQryCatalogFields(String qryCatalogFields, String schema, String idLayout);
+
 	
 }

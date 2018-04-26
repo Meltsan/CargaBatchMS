@@ -8,7 +8,8 @@ import static com.web.utils.UtilsProccess.determinaStatusCargaPorErrores;
 import java.io.File;
 import java.util.List;
 
-import org.apache.commons.io.FileUtils;
+import javax.management.RuntimeErrorException;
+
 import org.apache.log4j.Logger;
 import org.springframework.batch.core.StepContribution;
 import org.springframework.batch.core.scope.context.ChunkContext;
@@ -146,7 +147,7 @@ public class LoadFinalTask extends Jdbc implements Tasklet{
 			}else{
 				
 				ErrorsProcessor error = ErrorsProcessor.createClassFromError(e.getMessage());
-				LOG.error(String.format("TIPO ERROR [%s] \n MENSAJE", error.getTipoError(), error.getMessage()));
+				LOG.error(String.format("TIPO ERROR....... [%s] \n MENSAJE", error.getTipoError(), error.getMessage()));
 					
 				chunkContext.setAttribute("ERROR", error.getTipoError());
 
@@ -192,12 +193,7 @@ public class LoadFinalTask extends Jdbc implements Tasklet{
 			 * para persistir la informacion correspondiente a este proceso
 			 */
 			if(!isOperaciones()){
-				try{
 				updatedRows = this.jdbcTemplate.update(propertiesValidate.getUpdateSelect(), new Object[]{idProceso, idProceso});
-				}catch(Exception e){
-					LOG.debug("Error Archivo");
-					e.printStackTrace();
-				}
 				
 				LOG.debug(String.format("/n ********** PERSISTE INFORMACION DETALLE ***********"
 						+ "/n REGISTROS PERSISTIDOS [%d]"
@@ -275,35 +271,11 @@ public class LoadFinalTask extends Jdbc implements Tasklet{
 	}
 	
 	/**
-	 * Elimina el archivo cargado para WINDOWS
-	 *
-	 */
-	/*private void eliminaArchivoCargado(){
-		String[] parts = pathLoadFile.split(":");
-		String part2 = parts[1]; 
-		String part3 = parts[2]; 
-		
-		LOG.info("Elminando Archivo   ::::::::");
-		LOG.info(pathLoadFile);
-		LOG.info(part2+":"+part3);
-		LOG.info(part2);
-		
-		File file = new File(part2+":"+part3);
-		FileUtils.deleteQuietly(file);
-		if(file.delete())
-		{
-			LOG.info("EL ARCHIVO SE ELIMINO DE FORMA CORRECTA");
-		}
-	}
-	*/
-	
-	/**
-	 * Elimina el archivo cargado para LINUX
+	 * Elimina el archivo cargado
 	 *
 	 */
 	private void eliminaArchivoCargado(){
-		LOG.info("Cambiando ");
-	String[] parts = pathLoadFile.split(":");
+		String[] parts = pathLoadFile.split(":");
 		String part2 = parts[1]; 
 		
 		
@@ -313,7 +285,6 @@ public class LoadFinalTask extends Jdbc implements Tasklet{
 			LOG.info("EL ARCHIVO SE ELIMINO DE FORMA CORRECTA");
 		}
 	}
-	
 	
 	/**
 	 * 

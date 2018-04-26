@@ -37,6 +37,8 @@ public class ValidateMasiveLoad extends Jdbc{
 	@Autowired
 	private LoadCommonPropertiesValidate propertiesValidate;
 	private List<CommonValueWapper> listValuesWrapper;
+	private static final String VALIDATE_FECHA_GENERICO = "SELECT convert(datetime,?,112)";
+	private static final String VALIDATE_FECHA_OPERACION = "SELECT convert(datetime,?,103)";
 	
 	public String validateLoadMasive(CommonModel model, String idLayout, String schema){
 		
@@ -86,12 +88,11 @@ public class ValidateMasiveLoad extends Jdbc{
 		Class<? extends CommonModel> c = model.getClass();
 		int indexDefault = 0;
 		int indexConst = 0;
-		LOG.info(":::::::LISTA COL --------");
-		LOG.info("_____:::::::::::SETEO DE CAMPOS");
-		LOG.info("_____::::::::::: DEFAULT VALUES: " + propertiesValidate.getDefaultValue().size());
-		LOG.info("_____::::::::::: DEFAULT CONSTANTES: "+ propertiesValidate.getListConstante().size());
-		LOG.info("_____::::::::::: ATRIBUTOS CONFIGURADOD: "+ propertiesValidate.getValidateAttributes().size());
-		
+		LOG.debug("_____:::::::::::SETEO DE CAMPOS..........");
+		LOG.debug("_____::::::::::: DEFAULT VALUES: " + propertiesValidate.getDefaultValue().size());
+		LOG.debug("_____::::::::::: DEFAULT CONSTANTES: "+ propertiesValidate.getListConstante().size());
+		LOG.debug("_____::::::::::: ATRIBUTOS CONFIGURADOD: "+ propertiesValidate.getValidateAttributes().size());
+		LOG.debug("Tamaño de atributo :"  + propertiesValidate.getValidateAttributes().size());
 		if((propertiesValidate.getDefaultValue().size() 
 				+ propertiesValidate.getListConstante().size()) 
 					!= propertiesValidate.getValidateAttributes().size()){
@@ -131,7 +132,6 @@ public class ValidateMasiveLoad extends Jdbc{
 		}
 			listValuesWrapper.add(aux);
 		}
-		
 	}
 	
 	private boolean validateDataTypeAndLength(CommonModel model){
@@ -140,7 +140,7 @@ public class ValidateMasiveLoad extends Jdbc{
 			CommonValueWapper aux = listValuesWrapper.get(i);
 			String value = aux.getValue();
 			 if(StringUtils.isNotBlank(aux.getValue()) && aux.getValue().length() > validate.getLongitud() && (validate.getLongitud() > 0)){
-				 errorDetial.append(" LONGITUD MAYOR EN EL CAMPO - ")
+				  errorDetial.append(" LONGITUD MAYOR EN EL CAMPO - ")
 				 .append(aux.getNombreColumna())
 				 .append(" Actual : ")
 				 .append(aux.getValue().length())
@@ -149,15 +149,21 @@ public class ValidateMasiveLoad extends Jdbc{
 				 .append("  ] ");
 			 }
 			 
-			 if(S.equals(validate.getSwTipoDato())){
+			 if(S.equals(validate.getSwTipoDato())){ 
 				 switch(validate.getCveTipoDato()){
 				 case Config.ALFANUMERICO:
-					 if(!StringUtils.isAlphanumericSpace(value)){
+					 /*if(!StringUtils.isAlphanumericSpace(value)){
 						 errorDetial.append("    ").append(aux.getNombreColumna());
 						 aux.setValue("");
-					 }
+					 }*/
 			     break;
 				 case Config.FECHA:
+					 LOG.info("MASCARA : " + validate.getMascara());
+					 try{
+						 getvalidateFecha(value,validate.getMascara()); 
+					 }catch(Exception e){
+						 errorDetial.append("FORMATO DE FECHA INCORRECTO EN COLUMNA : ").append(" ["+ aux.getNombreColumna()+ "]  ");
+					 }
 					 
 					 break;
 				 case Config.DECIMAL:
@@ -229,6 +235,22 @@ public class ValidateMasiveLoad extends Jdbc{
 		}
 		return result;
 	}
+	
+	private String getvalidateFecha(String fecha, String mascara) {
+		Object[] args = new Object[] { fecha};
+			LOG.info(VALIDATE_FECHA_GENERICO);
+			String query = "";
+			
+			if (mascara.equals("112")){
+				query = VALIDATE_FECHA_GENERICO;
+			}else{
+				query = VALIDATE_FECHA_OPERACION;
+			}
+			String listGetter = this.jdbcTemplate.queryForObject(query,
+			args, String.class);
+	return listGetter;
+}
+	
 
 	public void setErrorDetial(StringBuffer errorDetial) {
 		this.errorDetial = errorDetial;
